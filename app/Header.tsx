@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { useRouter } from 'next/navigation'
+import Logo from "@/components/icons/Logo";
 
 export default function Header(){
     const [address, setAddress] = useState<string>("")
@@ -17,11 +18,22 @@ export default function Header(){
     }
 
     return(
-        <form onSubmit={handleSubmit} className="relative w-full h-full pt-[40px] pb-[25px] flex justify-center items-stretch gap-2">
-            <input onChange={handleChange} value={address} type="text" placeholder="Paste Your Wallet Address" className="relative border-2 w-[800px] px-[10px] py-[10px] outline-gray-500 border-gray-400 rounded-xl"/>
-            <button type="submit" className="relative flex-grow-0 h-[48px] px-[20px] bg-blue-500 rounded-xl text-white shadow-sm transition-all duration-200 hover:shadow-md">
-                Enter
-            </button>
-        </form>
+        <div className="relative w-full h-full pt-[40px] pb-[25px] px-[30px] flex justify-between">
+            <div className="relative flex  gap-3 items-center">
+                <div className="relative w-[60px]">
+                    <Logo />
+                </div>
+                <h1 className="w-full whitespace-nowrap	text-lg font-bold text-gray-800">Show Your Coins</h1>
+            </div>
+            <form onSubmit={handleSubmit} className="relative h-full flex justify-center items-stretch gap-2">
+                <input onChange={handleChange} value={address} type="text" placeholder="Paste Your Wallet Address" className="relative border-2 w-[650px] px-[10px] py-[10px] outline-gray-500 border-gray-400 rounded-xl"/>
+                <button type="submit" className="relative flex-grow-0 h-[48px] px-[20px] bg-blue-500 rounded-xl text-white shadow-sm transition-all duration-200 hover:shadow-md">
+                    Enter
+                </button>
+            </form>
+            <div className="w-[217px]">
+    
+            </div>
+        </div>
     )
 }
