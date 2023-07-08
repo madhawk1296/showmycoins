@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className='relative w-screen min-h-screen flex flex-col'>
+        <div className='relative w-screen min-h-screen flex flex-col pb-[200px]'>
           <Header/>
           {children}
         </div>
