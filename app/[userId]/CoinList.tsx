@@ -4,9 +4,10 @@ import TitleName from "./TitleName";
 
 export default function CoinList({coins, total}: {coins: any, total: number}){
     return( 
-        <div className="relative w-[900px] flex flex-col gap-2 items-center">
+        <div className="relative w-[1100px] flex flex-col gap-2 items-center">
             <div className="relative w-full flex justify-between">
                 <TitleName name="Name" />
+                <TitleName name="Chain" />
                 <TitleName name="Symbol" />
                 <TitleName name="Token Value" />
                 <TitleName name="Dollar Value" />

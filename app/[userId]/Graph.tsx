@@ -1,5 +1,6 @@
 'use client'
 
+import filterLowCoins from '@/lib/filterLowCoins';
 import formatDollar from '@/lib/formatDollar';
 import getDollarValues from '@/lib/getDollarValues';
 import getLabels from '@/lib/getLabels';
@@ -10,13 +11,14 @@ import plugin from 'tailwindcss';
 Chart.register(ArcElement, Tooltip, Legend, Colors)
 
 export default function Graph({total, coins}: {total: number, coins: any}){
-    const labels = getLabels(coins)
-    const dollarValues = getDollarValues(coins)
+    const coinsForGraph = filterLowCoins(total, coins)
+    const labels = getLabels(coinsForGraph)
+    const dollarValues = getDollarValues(coinsForGraph)
     
     const data = {
         labels,
         datasets: [{
-            label: " Value",
+            label: " Dollar Value",
             data: dollarValues,
             hoverOffset: 4
         }],
