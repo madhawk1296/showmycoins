@@ -31,7 +31,6 @@ export default function Graph({total, coins}: {total: number, coins: any}){
         plugins: {
           legend: {
             display: true,
-            position: "top",
             labels: {
               boxWidth: 20, // Adjust the box width according to your needs
             },
