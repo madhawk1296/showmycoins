@@ -1,10 +1,10 @@
 export default function Panel({color, title}: {color: string, title: string}){
-    const colorBackground: {blue: string, yellow: string, red: string} = {
+    const colorBackground: {[key: string]: string} = {
         blue: "bg-gradient-to-b from-blue-600 to-blue-400",
         yellow: "bg-gradient-to-b from-green-600 to-green-400",
         red: "bg-gradient-to-b from-red-600 to-red-400"
     }
-    const colorBorder = {
+    const colorBorder : { [key: string]: string } = {
         blue: "border-blue-400",
         yellow: "border-green-400",
         red: "border-red-400"
