@@ -4,6 +4,7 @@ import sortCoins from "@/lib/sortCoins"
 import gatherCoins from "../../lib/gatherCoins"
 import CoinList from "./CoinList"
 import Graph from "./Graph"
+import NoCoins from "./NoCoins"
 
 export default async function Home({ params: { userId } }: { params: { userId: string }}) {
   const originalCoins = await gatherCoins(userId)
@@ -11,10 +12,12 @@ export default async function Home({ params: { userId } }: { params: { userId: s
   const sortedCoins = sortCoins(coins)
   const total = getTotal(coins)
 
-  return (
+  return coins.length > 0 ? (
     <div className="relative w-full px-[40px] flex flex-col gap-6 items-center">
       <Graph total={total} coins={sortedCoins}/>
       <CoinList total={total} coins={sortedCoins} />
     </div>
+  ) : (
+    <NoCoins/>
   )
 }
