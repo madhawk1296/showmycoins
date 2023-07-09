@@ -1,5 +1,6 @@
 import './globals.css'
 import Header from './Header'
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Show Your Coins',
@@ -17,6 +18,7 @@ export default function RootLayout({
         <div className='relative w-screen min-h-screen flex flex-col pb-[200px]'>
           <Header/>
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
