@@ -15,7 +15,7 @@ export default function Coin({coin, total}: {coin: any, total:number}){
     const chain = getChain(blockchain)
 
     return (
-        <div className="relative w-full w-full h-[75px] flex items-center justify-between px-[20px] bg-white">
+        <div className="relative w-full flex-wrap md:h-[75px] flex items-center justify-between px-[20px] bg-white">
             <CoinDetail detail={name} image={uri} containsImage={true}/>
             <CoinDetail detail={chain} />
             <CoinDetail detail={`${symbol}`} />

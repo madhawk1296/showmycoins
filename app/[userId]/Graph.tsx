@@ -39,7 +39,7 @@ export default function Graph({total, coins}: {total: number, coins: any}){
       };
 
     return(
-        <div className="relative w-[900px] h-[450px] flex justify-center items-center mb-[25px]">
+        <div className="relative w-full md:w-[900px] h-[450px] flex justify-center items-center mb-[25px]">
             <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center'>
                 <h1 className="text-center text-lg font-semibold text-gray-500">Portfolio Value</h1>
                 <h1 className="text-center text-3xl font-bold">{formatDollar(total)}</h1>

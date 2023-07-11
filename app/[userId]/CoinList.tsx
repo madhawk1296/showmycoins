@@ -1,21 +1,17 @@
+'use client'
+
 import filterCoins from "@/lib/filterCoins";
 import Coin from "./Coin";
 import TitleName from "./TitleName";
+import { useContext } from "react";
+import MobileContext from "@/components/hooks/MobileContext";
+import CoinListMobile from "./CoinListMobile";
+import CoinListDesktop from "./CoinListDesktop";
 
 export default function CoinList({coins, total}: {coins: any, total: number}){
-    return( 
-        <div className="relative w-[1100px] flex flex-col gap-2 items-center">
-            <div className="relative w-full flex justify-between">
-                <TitleName name="Name" />
-                <TitleName name="Chain" />
-                <TitleName name="Symbol" />
-                <TitleName name="Token Value" />
-                <TitleName name="Dollar Value" />
-                <TitleName name="Percentage" />
-            </div>
-            <div className="relative w-full flex flex-col items-center border-2 rounded-lg overflow-hidden gap-0.5 bg-gray-200">
-                {coins.map((coin: any, index: number) => <Coin key={index} coin={coin} total={total} />)}
-            </div>
-        </div>
-    )
+    const { isMobile } = useContext(MobileContext)
+
+
+    console.log(isMobile)
+    return isMobile ? <CoinListMobile coins={coins} total={total}/> : <CoinListDesktop coins={coins} total={total}/>
 }

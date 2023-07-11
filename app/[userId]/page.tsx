@@ -18,7 +18,7 @@ export default async function Home({ params: { userId } }: { params: { userId: s
     const total = getTotal(coins)
 
   return coins.length > 0 ? (
-      <div className="relative w-full px-[40px] flex flex-col gap-6 items-center">
+      <div className="relative w-full flex flex-col gap-6 items-center">
         <Graph total={total} coins={sortedCoins}/>
         <CoinList total={total} coins={sortedCoins} />
       </div>

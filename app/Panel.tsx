@@ -12,7 +12,7 @@ export default function Panel({color, title}: {color: string, title: string}){
 
 
     return(
-        <div className={`w-[300px] h-[500px] border-2 rounded-xl ${colorBackground[color]} ${colorBorder[color]} py-[20px] px-[5px] flex flex-col items-center justify-center transition-all duration-200 shadow-sm hover:shadow-lg`}>
+        <div className={`w-full md:w-[300px] h-[120px] md:h-[500px] border-2 rounded-xl ${colorBackground[color]} ${colorBorder[color]} py-[20px] px-[5px] flex flex-col items-center justify-center transition-all duration-200 shadow-sm hover:shadow-lg`}>
             <h1 className="text-white font-semibold text-xl text-center tracking-widest leading-loose">
                 {title}
             </h1>
