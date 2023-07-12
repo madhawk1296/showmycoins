@@ -6,7 +6,6 @@ export default async function fetchChainCoins(userId: string, chainId: string, r
             // Wait for 1 second
             await new Promise(resolve => setTimeout(resolve, 1000));
             
-            
             // Retry the request
             return fetchChainCoins(userId, chainId, false);
             } else {
