@@ -8,7 +8,7 @@ export default function CoinListDesktop({coins, total}: {coins:any, total:number
                 <TitleName name="Name" />
                 <TitleName name="Chain" />
                 <TitleName name="Symbol" />
-                <TitleName name="Token Value" />
+                <TitleName name="Token Balance" />
                 <TitleName name="Dollar Value" />
                 <TitleName name="Percentage" />
             </div>

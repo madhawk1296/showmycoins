@@ -4,13 +4,14 @@ import filterLowCoins from '@/lib/filterLowCoins';
 import formatDollar from '@/lib/formatDollar';
 import getDollarValues from '@/lib/getDollarValues';
 import getLabels from '@/lib/getLabels';
+import { Coin } from '@/types/Coin';
 import { ArcElement, Chart, Colors, Legend, plugins, Tooltip } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2'
 import plugin from 'tailwindcss';
 
 Chart.register(ArcElement, Tooltip, Legend, Colors)
 
-export default function Graph({total, coins}: {total: number, coins: any}){
+export default function Graph({total, coins}: {total: number, coins: Coin[]}){
     const coinsForGraph = filterLowCoins(total, coins)
     const labels = getLabels(coinsForGraph)
     const dollarValues = getDollarValues(coinsForGraph)

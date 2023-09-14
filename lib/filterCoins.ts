@@ -1,3 +1,5 @@
-export default function filterCoins(coins: any): any{
-    return coins.filter((coin: any) => coin.fiat)
+import { Coin } from "@/types/Coin";
+
+export default function filterCoins(coins: Coin[]): Coin[]{
+    return coins.filter((coin: any) => true);
 }

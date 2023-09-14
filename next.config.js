@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.n.xyz',
+        hostname: 'cdn.moralis.io',
       },
     ],
   },

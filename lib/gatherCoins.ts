@@ -1,9 +1,11 @@
-import fetchChainCoins from "./fetchChainCoins"
+import gatherCoinsByChain from "./gatherCoinsbyChain";
 
 export default async function gatherCoins(userId: string){
-    const chains = ["arbitrum","ethereum","optimism","polygon"]
-    const chainCalls = chains.map(chain => fetchChainCoins(userId, chain))
-    const coinsArray = await Promise.all(chainCalls)
-    
-    return coinsArray.flat()
+    const chains = ['eth', 'polygon', 'arbitrum'];
+
+    const promises = chains.map(chain => gatherCoinsByChain(userId, chain));
+
+    const results = await Promise.all(promises);
+
+    return results.flat();
 }
