@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <div className='relative w-screen min-h-screen flex flex-col pb-[200px]'>
+          <div className='relative w-screen min-h-screen flex flex-col pb-[200px] md:bg-gray-50'>
             <Header/>
             {children}
             <Analytics />

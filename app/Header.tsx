@@ -21,7 +21,7 @@ export default function Header(){
     return(
         <div className="relative w-full h-full pt-[15px] md:pt-[40px] pb-[25px] px-[10px] md:px-[30px] flex justify-between items-center flex-col gap-5 md:flex-row">
             <Link href="/">
-                <div className="relative flex  gap-3 items-center py-[10px] px-[5px] transition-all duration-200 rounded-xl hover:bg-gray-50 hover:shadow-md">
+                <div className="relative flex  gap-3 items-center py-[10px] px-[5px] transition-all duration-200 rounded-xl   hover:bg-gray-200 md:hover:bg-gray-200 hover:shadow-md">
                     <div className="relative w-[60px]">
                         <Logo />
                     </div>
