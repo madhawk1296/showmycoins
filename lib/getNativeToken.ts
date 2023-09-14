@@ -4,7 +4,7 @@ export default function getNativeToken(chain: string) {
             return {
                 logo: '/ethereum.webp',
                 address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
-                name: "Eth(arb)",
+                name: "Eth",
                 symbol: "AETH"
             };
         case 'polygon':

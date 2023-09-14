@@ -8,26 +8,21 @@ import getUri from "@/lib/getUri";
 import CoinDetail from "./CoinDetail";
 
 export default function Coin({coin, total}: {coin: any, total:number}){
-    const { name, symbol, balance, logo, symbolLogos, dollarValue, chain } = coin
+    const { name, symbol, balance, logo, symbolLogos, dollarValue, chain, price } = coin
     const percentage = getPercentage(dollarValue, total)
 
     return (
         <div className="relative w-full flex-wrap md:h-[75px] flex items-center justify-between px-[20px] bg-white">
-<<<<<<< HEAD
-            <CoinDetail detail={name} image={logo} containsImage={true}/>
-            <CoinDetail detail={chain} />
-            <CoinDetail detail={symbol} />
-            <CoinDetail detail={formatToken(balance)} />
-            <CoinDetail detail={formatDollar(dollarValue)} />
-            <CoinDetail detail={formatPercent(percentage)} />
-=======
             <div className="relative flex items-center gap-2">
-                <CoinDetail detail={name} image={uri} containsImage={true}/>
+                <CoinDetail detail={name} image={logo} containsImage={true}/>
                 <h1 className="text-gray-500 text-sm font-bold"> ({chain})</h1>
             </div>
-            <div className="relative flex flex-row md:w-[500px] flex items-center justify-between">
+            <div className="relative flex flex-row md:w-[750px] flex items-center justify-between">
                 <div className="w-[80px]">
-                    <CoinDetail detail={formatToken(tokenValue)} /> 
+                    <CoinDetail detail={formatDollar(price)} /> 
+                </div>
+                <div className="w-[80px]">
+                    <CoinDetail detail={formatToken(balance)} /> 
                 </div>
                 <div className="w-[80px]">
                     <CoinDetail detail={formatDollar(dollarValue)} isGreen={true} />
@@ -36,7 +31,6 @@ export default function Coin({coin, total}: {coin: any, total:number}){
                     <CoinDetail detail={formatPercent(percentage)} />
                 </div>
              </div>
->>>>>>> origin/main
         </div>
     )
 }

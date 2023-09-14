@@ -17,11 +17,8 @@ import CoinRow from "./CoinRow";
 
 export default function CoinMobile({coin, total}: {coin: any, total:number}){
     const [expanded, setExpanded] = useState(false)
-    const { name, symbol, tokenValue, fiat, symbolLogos, blockchain } = coin
-    const dollarValue = getFiat(fiat)
+    const { name, symbol, balance, logo, symbolLogos, dollarValue, chain, price } = coin
     const percentage = getPercentage(dollarValue, total)
-    const uri = getUri(symbolLogos)
-    const chain = getChain(blockchain)
 
     const toggleExpansion = () => {
         setExpanded(!expanded)
@@ -32,8 +29,8 @@ export default function CoinMobile({coin, total}: {coin: any, total:number}){
             <div className="relative h-[80px] flex justify-between items-center">
                 <div className="flex items-center gap-4">
                     {(
-                        uri ?
-                        <Image alt="Coin Logo" src={uri} width={30} height={30} className="rounded-md"/>
+                        logo ?
+                        <Image alt="Coin Logo" src={logo} width={30} height={30} className="rounded-md"/>
                         : <QuestionMark />
                     )}
                     <div className="flex flex-col">
@@ -49,9 +46,10 @@ export default function CoinMobile({coin, total}: {coin: any, total:number}){
                 </div>
             </div>
             <div className={`relative w-full transition-all duration-200 overflow-hidden flex flex-col justify-center gap-1 px-[30px] ${
-                expanded ? "h-[80px]" : "h-0"}`}> 
-                <CoinRow title="# of Tokens:" value={formatToken(tokenValue)}/>
-                <CoinRow title="% of Portfolio:" value={formatPercent(percentage)}/>
+                expanded ? "h-[85px]" : "h-0"}`}>
+                <CoinRow title="Price" value={formatDollar(price)}/> 
+                <CoinRow title="Token Balance" value={formatToken(balance)}/>
+                <CoinRow title="Portfolio %" value={formatPercent(percentage)}/>
             </div>
         </div>
     )
