@@ -21,6 +21,4 @@ Effortlessly organize your coins, monitor their performance, and show off your p
 
 ---
 
-
-
-Thanks to [@madhawk1296](https://github.com/madhawk1296) for the collaboration on this launch!
+Thanks to [@aday2418](https://github.com/aday2418) for the collaboration on this launch!
